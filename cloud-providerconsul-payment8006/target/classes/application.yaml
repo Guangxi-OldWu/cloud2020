@@ -1,0 +1,17 @@
+server:
+  port: 8006
+
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.wuzhangze.entity
+
+spring:
+  application:
+    name: consul-provider-payment
+  cloud:
+    consul: # 配置Consul注册中心地址
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
